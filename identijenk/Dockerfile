@@ -15,6 +15,5 @@ RUN curl -L https://github.com/docker/compose/releases/download/1.25.0/docker-co
   && chmod +x /usr/local/bin/docker-compose
 
 USER jenkins
-COPY plugins.txt /usr/share/jenkins/plugins.txt
-RUN jenkins-plugin-cli -f /usr/share/jenkins/plugins.txt
+RUN jenkins-plugin-cli --plugins "blueocean:1.25.6 docker-workflow:1.29"
 
